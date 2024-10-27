@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rủ Crush Đi Chơi</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #fbe7e4;
+            font-family: 'Comic Sans MS', cursive;
+        }
+
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            background-color: #ff69b4;
+            position: relative;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: bounce 1.5s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .gift-box::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: #fff;
+            transform: translateY(-50%);
+            border-radius: 5px;
+        }
+
+        .gift-box::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            height: 100%;
+            width: 10px;
+            background-color: #fff;
+            transform: translateX(-50%);
+            border-radius: 5px;
+        }
+
+        .ribbon {
+            position: absolute;
+            top: -10px;
+            width: 80%;
+            height: 20px;
+            background-color: #ff1493;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.4em;
+            color: #ff1493;
+            text-align: center;
+            display: none;
+            transition: opacity 0.5s ease;
+            font-weight: bold;
+        }
+
+        .message span {
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>  
+    <div class="gift-box" onclick="showMessage()">
+        <div class="ribbon"></div>
+    </div>
+    <div class="message" id="message">
+        Thứ 7 em rảnh chứ? <span>Đi tham quan bảo tàng với anh nhá!</span>
+    </div>
+
+    <script>
+        function showMessage() {
+            const message = document.getElementById("message");
+            message.style.display = "block";
+            message.style.opacity = 1;
+        }
+    </script>
+</body>
+</html>
